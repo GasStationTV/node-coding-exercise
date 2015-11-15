@@ -4,9 +4,19 @@ dropdown
    // probably should have opted for the native select element 
    this.select = function(){
       if(this.parent.opts.data[0] === 'Midnight'){
-        this.parent.parent.opening = this.i * 30;
+        var newOpeningTime = this.i * 30;
+        if(newOpeningTime < this.parent.parent.closing){
+          this.parent.parent.opening = newOpeningTime;
+        } else {
+          // TODO: Notify invalid
+        }
       } else {
-        this.parent.parent.closing = this.i * 30 + 690;
+        var newClosingTime = this.i * 30 + 690;
+        if(newClosingTime > this.parent.parent.opening){
+          this.parent.parent.closing = newClosingTime;
+        } else {
+          // TODO: Notify invalid
+        }
       }
       this.parent.parent.update()
    }

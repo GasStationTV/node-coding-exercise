@@ -16,6 +16,9 @@ hour
         }
       }
       var minute = Math.abs(minutes % 60);
+      if (minutes === 0 || minutes === 1440){
+        return 'Midnight'
+      }
       return [hour || '12', ':', minute || '00', midday].join('')
     }
   style.

@@ -1,5 +1,5 @@
 station(class='{open: this.isOpen()}')
-  name { this.type }
+  h3 { this.type }
   .week
     weekday(each='{weekday, i in this.weekdays}')
   script.

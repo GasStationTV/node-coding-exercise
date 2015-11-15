@@ -1,5 +1,5 @@
 weekday(class='{closed: this.hoursToday.length === 0}')
-  name { weekday }
+  h5 { weekday }
   hour(each='{ this.hoursToday }')
   script.
     this.hoursToday = this.parent.hours.filter(function(hour){

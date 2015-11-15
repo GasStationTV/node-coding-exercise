@@ -1,4 +1,4 @@
-weekday
+weekday(class='{closed: this.hoursToday.length === 0}')
   name { weekday }
   hour(each='{ this.hoursToday }')
   script.

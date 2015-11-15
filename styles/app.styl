@@ -1,3 +1,6 @@
+body
+  padding: 25px;
+  background: #eee
 .hidden
   display: none
 .week {
@@ -6,3 +9,9 @@
 weekday
   display: flex;
   flex-direction: column;
+  flex: auto
+  &.closed:after
+    content: 'Closed'
+opening
+closing
+  display: block

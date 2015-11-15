@@ -73,7 +73,6 @@ hour
     this.format = function(minutes){
       var hour = Math.floor(Math.abs(minutes / 60));
       var midday = 'AM';
-      // TODO: get a native 12 hour pair of eyes
       if(hour >= 12) {
         midday = 'PM';
         if(hour >= 24) {

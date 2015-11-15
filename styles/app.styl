@@ -1,6 +1,7 @@
 body
   padding: 25px
   background: #eee
+dropdown
 .hidden
   display: none
 .week
@@ -14,3 +15,14 @@ weekday
 opening
 closing
   display: block
+  position: relative
+  &:focus
+    outline: none
+    dropdown
+      z-index: 5
+      display: block
+      background: white
+      position: absolute
+      alternative
+        display: block
+        padding: 4px 8px

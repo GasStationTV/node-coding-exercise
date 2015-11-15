@@ -4,4 +4,9 @@ station(class='{open: this.isOpen()}')
     weekday(each='{weekday, i in this.weekdays}')
   script.
     this.weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-    this.isOpen = function(){ return true }
+    this.isOpen = function(){
+      // timezone
+      for(var i = 0; i < this.hours.length; i++){
+        //- new Date()
+      }
+    }.bind(this)

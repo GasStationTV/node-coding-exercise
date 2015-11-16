@@ -1,6 +1,5 @@
 weekday(class='{closed: this.hoursToday.length === 0}')
   h5 { weekday }
-  button.action.allday Open 24 Hours
   button.action.add(onclick='{this.newOpening}') Add Hours
   hour(each='{ this.hoursToday }')
     

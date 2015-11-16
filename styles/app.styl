@@ -12,6 +12,15 @@ weekday
   flex: auto
   &.closed:after
     content: 'Closed'
+station
+  display: block
+  position: relative
+  &.open:before
+    position: absolute
+    right: 0
+    top: 0
+    content: 'Open Now'
+    background-color: green
 opening
 closing
   display: block

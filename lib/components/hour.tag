@@ -3,7 +3,7 @@ hour
     dropdown.action(data='{this.openingAlternatives}')
   closing(tabindex='1') { this.format(this.closing) }
     dropdown.action(data='{this.closingAlternatives}')
-  button.action.remove Remove
+  button.action.remove(onclick='{this.remove}') Remove
   script.
     var alternatives = [
       'Midnight',
@@ -88,6 +88,12 @@ hour
       }
       return [hour || '12', ':', minute || '00', midday].join('')
     }
+    this.remove = function(){
+      this.parent.hoursToday = this.parent.hoursToday.filter(function(hour){
+        return !(this.opening === hour.opening && this.closing === hour.closing);
+      }.bind(this))
+      this.parent.update()
+    }.bind(this)
   style.
     :scope opening:before {
       content: 'Opens ';

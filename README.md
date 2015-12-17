@@ -8,7 +8,7 @@
 ## Exercise Overview
 The site - an individual gas station - is the most atomic piece of the GSTV business model - it is at the core of everything we do. Our hardware is installed at the site, advertisers purchase impressions at a site level and schedules are generated on a per-site basis. Thus, keeping accurate information about a site is essential to maintaining business operations.
 
-We are asking you to build out the ability to create, edit and view hours for a given site. We are focusing on the way you approach the services, and structure the Mongo documents - there is no expectation of a polished UI.
+We are asking you to build out the ability to create, edit and view hours for a given site. We are focusing on the way you approach the services, and structure the Mongo documents - there is no expectation of a polished UI.  **We want you to focus on the server-side aspects of implementing these requirements.**
 
 This data is used to help us know when to turn on and off hardware, how many times a video asset is expected to play and at its most basic level, whether the site is open when we try to call them.
 

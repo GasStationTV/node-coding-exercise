@@ -1,0 +1,43 @@
+body
+  padding: 25px
+  background: #eee
+dropdown
+.hidden
+  display: none
+.week
+  display: flex
+weekday
+  display: flex
+  flex-direction: column
+  flex: auto
+  &.closed:after
+    content: 'Closed'
+station
+  display: block
+  position: relative
+  &.open:before
+    position: absolute
+    right: 0
+    top: 0
+    content: 'Open Now'
+    background-color: green
+opening
+closing
+  display: block
+  position: relative
+  &:focus
+    outline: none
+    dropdown
+      display: block
+      background: white
+      position: absolute
+      top: 0
+      z-index: 5
+      width: 100%
+      box-shadow: 1px 3px 3px rgba(0,0,0,.5)
+      alternative
+        cursor: pointer
+        display: block
+        padding: 4px 8px
+        &:hover
+          background-color: lightblue

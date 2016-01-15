@@ -1,0 +1,15 @@
+﻿
+
+
+cd C:\Users\Tim\websitesWorking\GSTV\node-coding-exercise
+node server
+
+if on another pc, move mongodb install to this location, copy paste.
+C:\mongodb\Server\3.2\bin\mongod
+
+
+
+
+
+
+

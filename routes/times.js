@@ -9,8 +9,6 @@ var dbMod = require("../db3")
 var timesRoute = (function () {
     function timesRoute() {
 
-
-        //(value_start, value_end, day, time_start, time_end, is_24, owner_id, deleted, _id)
         let validation_constraints = {
 
             value_start: {
@@ -129,23 +127,15 @@ var timesRoute = (function () {
             console.log(time);
             function getTime(query) {
                 return qGetTime(query).then(function (times) {
-                    //console.log(time)
-                    console.log('aaaaaaaaaaaaaaaaaaaaaa-----check----------aaaaaaaaaaaaa')
-                    console.log(times);
                     if (times.data.length) {
-                        console.log('aaaaaaaaaaaaaaaaaaaaaa-----check----------aaaaaaaaaaaaa')
-                        //console.log(time);
                         if (times.data.length === 1 && times.data[0]._id.toString() === time._id) {
                             times.data[0]._id = times.data[0]._id.toString();
                             // got the current record
                             // check if current record is the same
-                            console.log('aaaaaaaaaaaaaaaaaaaaaa-----check----------aaaaaaaaaaaaa')
-                            //console.log(time);
                             console.log(times.data[0]);
                             var time_test = new times_model.time(times.data[0].value_start, times.data[0].value_end, times.data[0].day,
                                 times.data[0].time_start, times.data[0].time_end, times.data[0].is_24, times.data[0].owner_id,
                                 times.data[0].deleted, times.data[0]._id);
-                            //time_test = times.data[0];
                             if (equal(time, time_test)) {
                                 return {error: 'Unable to Create/Update: the time slot has not been changed'};
                             } else {
@@ -154,7 +144,6 @@ var timesRoute = (function () {
                         } else {
                             return {error: 'Unable to Create/Update: there is at least one overlapping time slot'};
                         }
-                        //return 'Unable to Create/Update: there is at least one overlapping time slot';
                     } else {
                         return true;
                     }
@@ -166,13 +155,6 @@ var timesRoute = (function () {
                 if (time_start >= time_end) {
                     message += 'Unable to Create/Update: The start time must be before the end time. '
                 }
-                //if (time_start < 0 || time_start > 61) {
-                //    message += 'Unable to Create/Update: time slot, start time does not match the expected format. '
-                //}
-                //if (time_end < 0 || time_end > 61) {
-                //    console.log('test')
-                //    message += 'Unable to Create/Update: time slot, end time does not match the expected format. '
-                //}
             }
             if (message) {
                 console.log(message);
@@ -184,12 +166,9 @@ var timesRoute = (function () {
 
                 var query2 = {
                     object: {
-                        owner_id: time.owner_id, deleted: {$ne: true}//,_id: {$ne: ObjectId(time._id)}
-                        //, $or: [{value_start: {$gte: time.value_start, $lt: time.value_end }}, {value_end: {$gt: time.value_start, $lte: time.value_end}}
+                        owner_id: time.owner_id, deleted: {$ne: true}
                         , $or: [{$or: [{value_start: {$gte: time.value_start, $lt: time.value_end }}, {value_end: {$gt: time.value_start, $lte: time.value_end}}]}
                             , {$and: [{value_start: {$lte: time.value_start}}, {value_end: {$gte: time.value_start}}]}
-                            //, $or: [{$and: [{$or: [{value_start: {$lt: time.value_end}}, {value_start: {$lt: time.value_start}}]}
-                            //    ,{$or: [{value_start: {$lt: time.value_end}}, {value_start: {$lt: time.value_start}}]}]}
                             , {_id: {$eq: ObjectId(time._id)}}]
                     },
                     verb: 'get',
@@ -197,23 +176,16 @@ var timesRoute = (function () {
                 };
                 var query = {
                     object: {
-                        owner_id: time.owner_id, deleted: {$ne: true}//,_id: {$ne: ObjectId(time._id)}
-                        //, $or: [{value_start: {$gte: time.value_start, $lt: time.value_end }}, {value_end: {$gt: time.value_start, $lte: time.value_end}}
+                        owner_id: time.owner_id, deleted: {$ne: true}
                         , $or: [{$or: [{value_start: {$gte: time.value_start, $lt: time.value_end }}, {value_end: {$gt: time.value_start, $lte: time.value_end}}]}
                             , {$and: [{value_start: {$lte: time.value_start}}, {value_end: {$gt: time.value_start}}]}
-                            //, $or: [{$and: [{$or: [{value_start: {$lt: time.value_end}}, {value_start: {$lt: time.value_start}}]}
-                            //    ,{$or: [{value_start: {$lt: time.value_end}}, {value_start: {$lt: time.value_start}}]}]}
                             , {_id: {$eq: ObjectId(time._id)}}]
                     },
                     verb: 'get',
                     collection: 'times'
                 };
-                //console.log(time.value_start)
-                //console.log('aaaaaaaaaaaaaaaaaaaaaa-----check----------aaaaaaaaaaaaa')
-                //console.log(query.object)
                 return getTime(query);
             } catch (e) {
-                //console.log("test2");
                 return ({error: e.message});
             }
 
@@ -229,17 +201,13 @@ var timesRoute = (function () {
                     verb: verb,
                     object: myTime
                 };
-            //console.log(query);
             function timesUpdate(query) {
                 return qTimeUpdate(query).then(function (result) {
-                    //console.log('inside q promise')
                     return ({message: "Time updated/created successful."});
                 });
             }
 
-            ////console.log(myTime);
             if (isTimeOk != true) {
-                //console.log(isTimeOk);
                 return ({error: isTimeOk});
             }
 
@@ -248,8 +216,6 @@ var timesRoute = (function () {
         this.get = function (query_object) {
             function getTime(query) {
                 return qGetTime(query).then(function (times) {
-                    //console.log('inside promise')
-                    //console.log(times);
                     return {times: times.data};
                 });
             }
@@ -263,15 +229,12 @@ var timesRoute = (function () {
                 };
                 return getTime(query);
             } catch (e) {
-                //console.log("test2");
                 return ({error: e.message});
             }
         };
         this.delete = function (query_object) {
             function getTime(query) {
                 return qGetTime(query).then(function (times) {
-                    //console.log('inside promise')
-                    //console.log(times);
                     return {times: times.data};
                 });
             }
@@ -285,30 +248,9 @@ var timesRoute = (function () {
                 };
                 return getTime(query);
             } catch (e) {
-                //console.log("test2");
                 return ({error: e.message});
             }
         };
-        //this.get_by_owner_or_id = function (koaThis, is_owner) {
-        //    try  {
-        //        var qGetTime = Q.nbind(db.process_db_query, db);
-        //        var query = {
-        //            object: is_owner ? { owner_id: koaThis.request.query._id, deleted: { $ne: false } } : { _id: koaThis.request.query._id, deleted: { $ne: false } },
-        //            verb: 'get',
-        //            collection: 'times'
-        //        };
-        //        function getTime(query) {
-        //            return qGetTime(query).then(function (times) {
-        //                //console.log(times);
-        //                return { times: times };
-        //            });
-        //        }
-        //        return getTime(query);
-        //    } catch (e) {
-        //        //console.log("test2");
-        //        return ({ error: e.message });
-        //    }
-        //};
 
     }
 

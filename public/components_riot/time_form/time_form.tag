@@ -190,8 +190,8 @@
             this.update();
         }
         this.delete_time = (event) =>{
-            this.opts.delete_callback({time_start: time_start.selectedIndex != -1 ? time_start.options[time_start.selectedIndex].value : 0
-                , time_end: time_end.selectedIndex != -1 ? time_end.options[time_end.selectedIndex].value : 0
+            this.opts.delete_callback({time_start: time_start.selectedIndex != -1 ? time_start.options[time_start.selectedIndex].value : 1
+                , time_end: time_end.selectedIndex != -1 ? time_end.options[time_end.selectedIndex].value : 1
                 , day: this.opts.day
                 , is_24: this.is_24
                 , _id: this.opts._id});

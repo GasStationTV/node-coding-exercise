@@ -184,8 +184,8 @@
                     xmlHttp.onreadystatechange = this.process_response
                     xmlHttp.open("POST", "/owners/" + owner_id + "/times/");
                     xmlHttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-                    xmlHttp.send(JSON.stringify({time_start: null
-                        , time_end: null
+                    xmlHttp.send(JSON.stringify({time_start: 1
+                        , time_end: 1
                         , day: day
                         , is_24: true
                         , value_start: value

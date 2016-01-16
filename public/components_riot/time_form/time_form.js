@@ -45,8 +45,8 @@ this.checked_changed = function (event) {
     _this.update();
 };
 this.delete_time = function (event) {
-    _this.opts.delete_callback({ time_start: time_start.selectedIndex != -1 ? time_start.options[time_start.selectedIndex].value : 0,
-        time_end: time_end.selectedIndex != -1 ? time_end.options[time_end.selectedIndex].value : 0,
+    _this.opts.delete_callback({ time_start: time_start.selectedIndex != -1 ? time_start.options[time_start.selectedIndex].value : 1,
+        time_end: time_end.selectedIndex != -1 ? time_end.options[time_end.selectedIndex].value : 1,
         day: _this.opts.day,
         is_24: _this.is_24,
         _id: _this.opts._id });

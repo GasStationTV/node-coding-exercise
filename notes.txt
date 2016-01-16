@@ -1,0 +1,22 @@
+﻿Notes:
+
+This took me a bit longer than I expected. I had not used Mongodb since discovering firebase(really awesome, check it out) over a year ago
+and had to update mongodb, how I connected to it and my node version as well. The last time I was using mongodb was with socket io and redis
+trying to make something similar to firebase, I had it mostly working but shortly after found firebase. If you wish I can walk you through that
+project as well. I tried to stay focused on the backend, but the frontend needed a lot of functionality. Some is copy and paste from previous projects
+so not all is es6 perfect. Obviously there is a lot that could be done, optimizations, unit testing, better ui, bring in mongoose, etc, but I hope
+this demonstrates some of my abilities. Everything is working on my end, so please let me know if you have any issues.
+
+
+cd C:\Users\Tim\websitesWorking\GSTV\node-coding-exercise
+node server
+
+if on another pc, move mongodb install to this location, copy paste.
+C:\mongodb\Server\3.2\bin\mongod
+
+
+
+
+
+
+

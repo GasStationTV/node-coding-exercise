@@ -1,0 +1,16 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  width: 80%;
+  margin: 0 auto;
+}
+
+a {
+  color: #00B7FF;
+}
+
+
+.siteInfo{
+  border: 2px solid black;
+  height: 5em;
+}

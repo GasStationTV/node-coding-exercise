@@ -1,3 +1,6 @@
+node_modules
+.env
+
 ### API Keys ###
 *.auth.js
 
@@ -179,3 +182,4 @@ node_modules
 
 # compiled files
 dist
+>>>>>>> 567fb62210242b715e97f93bf0d9fbfb4ea50dcb

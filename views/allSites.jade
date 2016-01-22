@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1 Loop Over all Sites in DB
+  p Display All Appropriately with links to corresponding id
+  each site in allSites
+    a(href='/site/'+site._id+'/schedule')= site.site_name
+    p= site.address
+    p= site.telephone
+    p= site.timezone
+    p= site.schedule
+  

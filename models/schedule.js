@@ -2,34 +2,34 @@ import mongoose from 'mongoose';
 var Schema = mongoose.Schema;
 
 var scheduleSchema = new mongoose.Schema({
-  site_id: String,
-  days: {
+  site_id: { type: String, required: true},
+  days: { 
     sunday: {
-      isOpenAllDay: Boolean,
+      isOpenAllDay: {type: Boolean, required: true, enum: [true, false]},
       hours: [{ type: Schema.Types.ObjectId, ref: 'TimeSlot' }]
     },
     monday: {
-      isOpenAllDay: Boolean,
+      isOpenAllDay: {type: Boolean, required: true, enum: [true, false]},
       hours: [{ type: Schema.Types.ObjectId, ref: 'TimeSlot' }]
     },
     tuesday: {
-      isOpenAllDay: Boolean,
+      isOpenAllDay: {type: Boolean, required: true, enum: [true, false]},
       hours: [{ type: Schema.Types.ObjectId, ref: 'TimeSlot' }]
     },
     wednesday: {
-      isOpenAllDay: Boolean,
+      isOpenAllDay: {type: Boolean, required: true, enum: [true, false]},
       hours: [{ type: Schema.Types.ObjectId, ref: 'TimeSlot' }]
     },
     thursday: {
-      isOpenAllDay: Boolean,
+      isOpenAllDay: {type: Boolean, required: true, enum: [true, false]},
       hours: [{ type: Schema.Types.ObjectId, ref: 'TimeSlot' }]
     },
     friday: {
-      isOpenAllDay: Boolean,
+      isOpenAllDay: {type: Boolean, required: true, enum: [true, false]},
       hours: [{ type: Schema.Types.ObjectId, ref: 'TimeSlot' }]
     },
     saturday: {
-      isOpenAllDay: Boolean,
+      isOpenAllDay: {type: Boolean, required: true, enum: [true, false]},
       hours: [{ type: Schema.Types.ObjectId, ref: 'TimeSlot' }]
     }
   }

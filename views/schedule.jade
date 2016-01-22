@@ -1,0 +1,106 @@
+extends layout
+
+block content
+  h1 Schedule in for Sites
+  
+  div.siteInfo
+    h3 #{site.site_name}
+    h4 #{site.site_address}
+    h4 #{site.site_timezone}
+  
+  
+  div.siteInfo 
+    h3 Sunday 
+    if days.sunday.isOpenAllDay
+      h3 Open 24 Hours
+    else
+      table
+        thead
+          th Open 
+          th Close 
+        tbody
+        each timeSlot in days.sunday.hours
+          td= timeSlot.open
+          td= timeSlot.close
+  div.siteInfo 
+    h3 Monday 
+    if days.tuesday.isOpenAllDay
+      h3 Open 24 Hours
+    else
+      table
+        thead
+          th Open 
+          th Close 
+        tbody
+        each timeSlot in days.monday.hours
+          td= timeSlot.open
+          td= timeSlot.close
+  div.siteInfo 
+    h3 Tuesday 
+    if days.tuesday.isOpenAllDay
+      h3 Open 24 Hours
+    else
+      table
+        thead
+          th Open 
+          th Close 
+        tbody
+        each timeSlot in days.tuesday.hours
+          td= timeSlot.open
+          td= timeSlot.close
+  div.siteInfo 
+    h3 Wednesday 
+    if days.wednesday.isOpenAllDay
+      h3 Open 24 Hours
+    else
+      table
+        thead
+          th Open 
+          th Close 
+        tbody
+        each timeSlot in days.wednesday.hours
+          td= timeSlot.open
+          td= timeSlot.close
+  div.siteInfo 
+    h3 Thursday 
+    if days.thursday.isOpenAllDay
+      h3 Open 24 Hours
+    else
+      table
+        thead
+          th Open 
+          th Close 
+        tbody
+        each timeSlot in days.thursday.hours
+          td= timeSlot.open
+          td= timeSlot.close
+  div.siteInfo 
+    h3 Friday 
+    if days.friday.isOpenAllDay
+      h3 Open 24 Hours
+    else
+      table
+        thead
+          th Open 
+          th Close 
+        tbody
+        each timeSlot in days.friday.hours
+          td= timeSlot.open
+          td= timeSlot.close
+  div.siteInfo 
+    h3 Saturday
+    if days.saturday.isOpenAllDay
+      h3 Open 24 Hours
+    else
+      table
+        thead
+          th Open 
+          th Close 
+        tbody
+        each timeSlot in days.saturday.hours
+          td= timeSlot.open
+          td= timeSlot.close
+    
+
+
+  

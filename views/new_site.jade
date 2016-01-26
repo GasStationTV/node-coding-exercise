@@ -1,0 +1,198 @@
+extends layout
+
+block content
+  h1= GSTV 
+  br
+  h4 Add a New Site 
+  br
+  br
+  a(href='/site') Back to List of Sites
+  br
+  a(href='/') Home
+  br
+  br
+  br
+  div
+    form(action='/site/new' method='post' enctype='application/json')
+      label Site Name:
+      input(type='text' name='name')
+      br
+      label Street:
+      input(type='text' name='street')
+      br
+      label City:
+      input(type='text' name='city')
+      br
+      label State:
+      input(type='text' name='state')
+      br
+      label Phone Number:
+      input(type='text' name='phone')
+      br
+      label Email: 
+      input(type='text' name='email')
+      br
+      label Primary Contact Name:
+      input(type='text' name='primaryContact')
+      br
+      label Additonal Contacts:
+      br
+      input(type='text' name='otherContacts[0]')
+      br
+      input(type='text' name='otherContacts[1]')
+      br
+      label Known Observed Holidays
+      br
+      input(type='date' name='observedHolidays[0]')
+      br
+      h2 Hours of Operation:
+      p FE Entry Rules: 
+      p * If a site is open past midnight on Sunday, then its Sunday hours technically end at Midnight,
+      p and Monday's hours technically begin at 12:00 AM. Enter literal hours for that day and it's time-slots. 
+      p * If a site opens at Midnight on Sunday, then it is not open on Sunday, but rather opens at 12:00 AM on Monday. 
+      p * If Open 24hrs is checked, disable the dropdown so hours cannot be entered.  
+      br
+      h4 Sunday  
+      label Open 24 Hours?
+      input(type='checkbox' name='schedule[sunday][isOpenAllDay]')
+      h6 Time Slots:
+      label Open
+      select(name='schedule[sunday][hours][0][open]')
+        option(value='')
+        option(value='0000') 12 AM
+        option(value='1230') 12:30 AM
+        option(value='0100') 1 AM
+        option(value='2400') MIDNIGHT
+      br
+      label Close 
+      select(name='schedule[sunday][hours][0][close]')
+        option(value='')
+        option(value='0000') 12 AM
+        option(value='0800') 12:30 AM
+        option(value='0500') 5:00 PM
+        option(value='2400') MIDNIGHT
+      br
+      h4 Monday  
+      label Open 24 Hours?
+      input(type='checkbox' name='schedule[monday][isOpenAllDay]')
+      h6 Time Slots:
+      label Open
+      select(name='schedule[monday][hours][0][open]')
+        option(value='')
+        option(value='0000') 12 AM
+        option(value='1230') 12:30 AM
+        option(value='0100') 1 AM
+        option(value='2400') MIDNIGHT
+      br
+      label Close 
+      select(name='schedule[monday][hours][0][close]')
+        option(value='')
+        option(value='0000') 12 AM
+        option(value='0800') 12:30 AM
+        option(value='0500') 5:00 PM
+        option(value='2400') MIDNIGHT
+      br
+      h4 Tuesday 
+      label Open 24 Hours?
+      input(type='checkbox' name='schedule[tuesday][isOpenAllDay]')
+      h6 Time Slots:
+      label Open
+      select(name='schedule[tuesday][hours][0][open]')
+        option(value='')
+        option(value='0000') 12 AM
+        option(value='1230') 12:30 AM
+        option(value='0100') 1 AM
+        option(value='2400') MIDNIGHT
+      br
+      label Close 
+      select(name='schedule[tuesday][hours][0][close]')
+        option(value='')
+        option(value='0000') 12 AM
+        option(value='0800') 12:30 AM
+        option(value='0500') 5:00 PM
+        option(value='2400') MIDNIGHT
+      br
+      h4 Wednesday  
+      label Open 24 Hours?
+      input(type='checkbox' name='schedule[wednesday][isOpenAllDay]')
+      h6 Time Slots:
+      label Open
+      select(name='schedule[wednesday][hours][0][open]')
+        option(value='')
+        option(value='0000') 12 AM
+        option(value='1230') 12:30 AM
+        option(value='0100') 1 AM
+        option(value='2400') MIDNIGHT
+      br
+      label Close 
+      select(name='schedule[wednesday][hours][0][close]')
+        option(value='')
+        option(value='0000') 12 AM
+        option(value='0800') 12:30 AM
+        option(value='0500') 5:00 PM
+        option(value='2400') MIDNIGHT
+      br
+      h4 Thursday  
+      label Open 24 Hours?
+      input(type='checkbox' name='schedule[thursday][isOpenAllDay]')
+      h6 Time Slots:
+      label Open
+      select(name='schedule[thursday][hours][0][open]')
+        option(value='')
+        option(value='0000') 12 AM
+        option(value='1230') 12:30 AM
+        option(value='0100') 1 AM
+        option(value='2400') MIDNIGHT
+      br
+      label Close 
+      select(name='schedule[thursday][hours][0][close]')
+        option(value='')
+        option(value='0000') 12 AM
+        option(value='0800') 12:30 AM
+        option(value='0500') 5:00 PM
+        option(value='2400') MIDNIGHT
+      br
+      h4 Friday  
+      label Open 24 Hours?
+      input(type='checkbox' name='schedule[friday][isOpenAllDay]')
+      h6 Time Slots:
+      label Open
+      select(name='schedule[friday][hours][0][open]')
+        option(value='')
+        option(value='0000') 12 AM
+        option(value='1230') 12:30 AM
+        option(value='0100') 1 AM
+        option(value='2400') MIDNIGHT
+      br
+      label Close 
+      select(name='schedule[friday][hours][0][close]')
+        option(value='')
+        option(value='0000') 12 AM
+        option(value='0800') 12:30 AM
+        option(value='0500') 5:00 PM
+        option(value='2400') MIDNIGHT
+      br
+      h4 Saturday  
+      label Open 24 Hours?
+      input(type='checkbox' name='schedule[saturday][isOpenAllDay]')
+      h6 Time Slots:
+      label Open
+      select(name='schedule[saturday][hours][0][open]')
+        option(value='')
+        option(value='0000') 12 AM
+        option(value='1230') 12:30 AM
+        option(value='0100') 1 AM
+        option(value='2400') MIDNIGHT
+      br
+      label Close 
+      select(name='schedule[saturday][hours][0][close]')
+        option(value='')
+        option(value='0000') 12 AM
+        option(value='0800') 12:30 AM
+        option(value='0500') 5:00 PM
+        option(value='2400') MIDNIGHT
+      br
+      br
+      p ALL DONE?
+      input(type='submit' value='SUBMIT') 
+  

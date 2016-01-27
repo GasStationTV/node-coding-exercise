@@ -1,7 +1,7 @@
 var express = require('express');
-var babel = require("babel-core");
-require("babel-register");
-require('dotenv').load()
+var babel = require('babel-core');
+require('babel-register');
+require('dotenv').load();
 
 var path = require('path');
 var favicon = require('serve-favicon');

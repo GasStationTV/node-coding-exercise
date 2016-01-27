@@ -1,10 +1,3 @@
-
-
-
-
-
-
-
 # GSTV BE Coding Exercise
 
 1. [Exercise Overview](#exercise-overview)

@@ -10,9 +10,9 @@ var siteSchema = new Schema({
   phone: String,
   email: String,
   primaryContactName: String,
-  otherContacts: [String],
+  otherContacts: Array,
   lastUpdated: {type: Date, default: Date.now},
-  observedHolidays: [String],
+  observedHolidays: Array,
   schedule: {
     sunday: {
       isOpenAllDay: Boolean,
@@ -43,7 +43,7 @@ var siteSchema = new Schema({
       hours: Array
     },
   }
-})
+});
 
 
 var Sites = mongoose.model('Sites', siteSchema);

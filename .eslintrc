@@ -1,5 +1,5 @@
 {
-  "extends": "airbnb/base",
+  "extends": "",
   "globals": {},
   "env" : {
     "node" : true

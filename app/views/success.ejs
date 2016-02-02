@@ -1,0 +1,16 @@
+<% include header %>
+
+  <h1><%-title %></h1>
+
+  <form action="/view" method="post">
+  <div>
+    <input type="hidden" name="siteid" value="<%-siteid%>">
+    <input type="hidden" name="date" value="<%-date%>">
+    <input type="submit" value="Return to View">
+  </div>
+  </form>
+ 
+
+
+
+<% include footer %>

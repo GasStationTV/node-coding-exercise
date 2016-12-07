@@ -1,0 +1,40 @@
+doctype
+html
+  head
+    link(rel='stylesheet' href='/index.css')
+    script(async src='/index.js')
+  body
+    h1 Welcome to Stations
+    station
+    template#station
+      station
+        name
+        location
+        h2 Hours
+        weekdays
+    template#weekdays
+      weekdays
+        ul
+          li(each="{day in weekdays}") { day }
+            hours
+        script.
+          this.weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        style(scoped).
+          :scope ul {
+            display: flex;
+            padding-left: 0;
+          }
+          :scope li {
+            list-style: none;
+          }
+    template#hours
+      hours
+        ul
+          li(each="{hour in hours}")
+            openduring
+        label.action Open 24 Hours
+        input.action(type='checkbox')
+        button.action Save
+    template#openduring
+      span.open { open }
+      span.close { close }

@@ -1,0 +1,6 @@
+body {
+  background: #eee
+}
+body.unauthorized .action {
+  display: none !important;
+}

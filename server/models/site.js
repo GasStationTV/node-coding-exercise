@@ -1,4 +1,3 @@
-// @TODO - fix this require to be one line
 import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 

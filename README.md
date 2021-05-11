@@ -161,8 +161,8 @@ GSTV has sites across the US. People from the Detroit main office may be calling
 GSTV has sites in Arizona. Arizona does not participate in daylight savings time. For that reason it is important to know the open times based upon a site’s participation in daylight savings.
 
 ## System Requirements
-* Node.js `^4.0.0`
-* MongoDB `^3.0.0`
+* Node.js `^14.0.0`
+* MongoDB `^4.0.0`
 
 ## Version Control
 ### GitFlow and GithubFlow
@@ -174,7 +174,7 @@ Please fork our repository and use a feature branch workflow while developing yo
 
 ## JavaScript
 ### Standards
-We have a work in progress [style guide](https://github.com/davezuko/gstv-javascript-standards) that you can refer to. We don't expect you to strictly adhere to these standards, but they may help provide insight into how our JavaScript is generally structured.
+We have a work in progress [style guide](https://github.com/airbnb/javascript) that you can refer to. We don't expect you to strictly adhere to these standards, but they may help provide insight into how our JavaScript is generally structured.
 
 ### Unit Testing
 Please feel free to create unit tests - we use [Mocha](https://github.com/mochajs/mocha).
